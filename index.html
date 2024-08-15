@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>Hexacore Cloud Solutions</title>
+<title>Hexacore - Tech Support & Cloud Solutions</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -37,10 +37,35 @@
     </style>
 </head>
 <body>
+	<script>
+	function countdown() {
+
+  const countDownDate = new Date("September 1, 2024 00:00:00").getTime();
+
+  const now = new Date().getTime();
+
+  const distance = countDownDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown").innerHTML = days + " " + hours + " "  + minutes + " " + seconds + " ";
+
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "¡EXPIRO!";
+  }
+}
+
+var x = setInterval(countdown, 1000);
+	</script>
     <table>
         <tr>
             <td nowrap="nowrap" bgcolor="#222222"><p><img src="main/logo.png" width="4000" height="4000" alt=""/></p>
-            <p>01092024</p></td>
+<p id="countdown"></p>
+</td>
       </tr>
     </table>
 </body>
