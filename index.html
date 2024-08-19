@@ -37,35 +37,29 @@
     </style>
 </head>
 <body>
-	<script>
-	function countdown() {
+<script>
+function countdown() {
+  // Fecha objetivo
+  const countDownDate = new Date("September 9, 2024 00:00:00").getTime();
 
-  const countDownDate = new Date("September 1, 2024 00:00:00").getTime();
-
-
+  // fecha y hora en ms
   const now = new Date().getTime();
 
-
+  // diferencia en ms
   const distance = countDownDate - now;
 
+  // Mostrar resultado en ms
+  document.getElementById("countdown").innerHTML = distance + "!";
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-
-  document.getElementById("countdown").innerHTML = days + " " + hours + " "  + minutes + " " + seconds + " ";
-
+  // Contador a cero, acción personalizada
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("countdown").innerHTML = "END";
+    document.getElementById("countdown").innerHTML = "¡This is the End!";
   }
 }
-
-
-var x = setInterval(countdown, 1000);
-	</script>
+// Ejecutar función cada ms<br>
+var x = setInterval(countdown, 1);
+</script>
     <table>
         <tr>
             <td nowrap="nowrap" bgcolor="#222222"><p><img src="main/logo.png" width="4000" height="4000" alt=""/></p>
